@@ -1,7 +1,7 @@
 ## Tecnologias Utilizadas
 
 [![NODE](https://img.shields.io/badge/License-node-green.svg)](https://nodejs.org/en)
-[![Cypress-mochawesome-reporter](https://img.shields.io/badge/license-cypress-mochawesome-reporter-red.svg)](https://www.npmjs.com/package/cypress-mochawesome-reporter)
+[![Cypress-mochawesome-reporter](https://img.shields.io/badge/license-mochawesome-red.svg)](https://www.npmjs.com/package/cypress-mochawesome-reporter)
 [![Cypress](https://img.shields.io/badge/license-cypress-blue.svg)](https://www.cypress.io/)
 [![JS](https://img.shields.io/badge/license-javascript-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![GitHub Actions](https://img.shields.io/badge/license-githubactions-blue.svg)](https://github.com/features/actions)
