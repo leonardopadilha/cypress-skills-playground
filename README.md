@@ -20,22 +20,10 @@ Instalar as dependências
   npm install
 ```
 
-## Execução dos testes via terminal
-
-```bash
-  npm run test
-```
-
 ## Execução dos testes via tela
 
 ```bash
   npm run test:open
-```
-
-## Execução dos testes via terminal
-
-```bash
-  npm run test
 ```
 
 ## Execução dos testes via terminal
