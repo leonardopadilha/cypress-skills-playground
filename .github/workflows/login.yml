@@ -25,4 +25,4 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: Geração do relatório
-          path: ./reports/html
+          path: ./cypress/reports/html
