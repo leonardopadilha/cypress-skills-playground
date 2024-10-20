@@ -12,11 +12,7 @@ describe('Login', () => {
 
   it('Deve logar com sucesso', () => {
     cy.login('papito@cyskills.com.br', 'showtime')
-
-    cy.get('[data-cy="welcome-title"]')
-        .should('be.visible')
-        .and('have.text', 'Boas vindas ao Cypress Playground')
-
+    cy.userLoggedIn()
   })
 
   it('Não Deve logar com senha inválida', () => {
@@ -40,24 +36,24 @@ describe('Login', () => {
     cy.noticeHave('A senha precisa ter pelo menos 6 caracteres. Vamos tentar de novo!')
   })
 
-})
+  it('Deve validar a obrigatoriedade do campo email', () => {
+    cy.get('[data-cy=login-button]')
+      .should('be.visible')
+      .click()
 
-Cypress.Commands.add('login', (email, password) => {
-  cy.get('[data-cy=email]')
-    .should('be.visible')
-    .type(email)
+    cy.noticeHave('Parece que você esqueceu de informar seu e-mail.')
+  })
 
-  cy.get('[data-cy=password]')
-    .should('be.visible')
-    .type(password)
+  it('Deve validar a obrigatoriedade do campo password', () => {
+    cy.get('[data-cy=email]')
+      .should('be.visible')
+      .type('papito@cyskills.com.br')
 
-  cy.get('[data-cy=login-button]')
-    .should('be.visible')
-    .click()
-})
+      cy.get('[data-cy=login-button]')
+        .should('be.visible')
+        .click()
 
-Cypress.Commands.add('noticeHave', (text) => {
-  cy.get('.notice p')
-    .should('be.visible')
-    .and('have.text', text)
+    cy.noticeHave('Por favor, digite sua senha para continuar.')
+  })
+
 })
