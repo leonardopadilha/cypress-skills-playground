@@ -2,12 +2,7 @@
 
 describe('Login', () => {
   beforeEach(() => {
-    cy.viewport(1920, 1080)
-
-    cy.visit('https://playground.cyskills.com.br/login')
-
-      cy.contains('h2', 'Faça login')
-          .should('be.visible')
+    cy.goHome()
   })
 
   it('Deve logar com sucesso', () => {
