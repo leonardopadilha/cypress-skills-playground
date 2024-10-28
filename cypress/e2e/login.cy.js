@@ -31,24 +31,19 @@ describe('Login', () => {
     cy.noticeHave('A senha precisa ter pelo menos 6 caracteres. Vamos tentar de novo!')
   })
 
-  it('Deve validar a obrigatoriedade do campo email', () => {
-    cy.get('[data-cy=login-button]')
-      .should('be.visible')
-      .click()
-
+  it('Não deve logar sem o email', () => {
+    cy.login('', 'abc12')
     cy.noticeHave('Parece que você esqueceu de informar seu e-mail.')
   })
 
-  it('Deve validar a obrigatoriedade do campo password', () => {
-    cy.get('[data-cy=email]')
-      .should('be.visible')
-      .type('papito@cyskills.com.br')
-
-      cy.get('[data-cy=login-button]')
-        .should('be.visible')
-        .click()
-
+  it('Não deve logar sem a senha', () => {
+    cy.login('teste@teste.com.br', '')
     cy.noticeHave('Por favor, digite sua senha para continuar.')
+  })
+
+  it('Não deve logar sem o email e senha', () => {
+    cy.login('', '')
+    cy.noticeHave('Parece que você esqueceu de informar seu e-mail.')
   })
 
 })
