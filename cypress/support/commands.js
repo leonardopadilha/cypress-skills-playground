@@ -33,14 +33,24 @@ Cypress.Commands.add('goHome', () => {
         .should('be.visible')
 })
 
-Cypress.Commands.add('login', (email, password) => {
-    cy.get('[data-cy=email]')
-        .should('be.visible')
-        .type(email)
+// Helper
+Cypress.Commands.add('doLogin', () => {
+    cy.login('papito@cyskills.com.br', 'showtime')
+    cy.userLoggedIn()
+})
 
-    cy.get('[data-cy=password]')
-        .should('be.visible')
-        .type(password)
+Cypress.Commands.add('login', (email, password) => {
+    if (email) {
+        cy.get('[data-cy=email]')
+            .should('be.visible')
+            .type(email)
+    }
+
+    if (password) {
+        cy.get('[data-cy=password]')
+            .should('be.visible')
+            .type(password)
+    }
 
     cy.get('[data-cy=login-button]')
         .should('be.visible')
