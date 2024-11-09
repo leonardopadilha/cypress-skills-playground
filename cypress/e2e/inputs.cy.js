@@ -3,12 +3,10 @@
 describe('Input Fields', () => {
   beforeEach(() => {
     cy.goHome()
+    cy.doLogin()
   })
 
   it('deve preencher o campo texto', () => {
-    cy.login('papito@cyskills.com.br', 'showtime')
-    cy.userLoggedIn()
-
     cy.get('nav a[href="/input-fields"]')
         .click()
 
